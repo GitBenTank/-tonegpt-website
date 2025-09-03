@@ -309,20 +309,19 @@
         }
 
         .guitar-pick {
-            width: 80px;
-            height: 100px;
+            width: 60px;
+            height: 80px;
             background: var(--gradient);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            clip-path: polygon(50% 0%, 85% 25%, 85% 75%, 50% 100%, 15% 75%, 15% 25%);
             position: relative;
             animation: pick-float 3s ease-in-out infinite;
             box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-
         .guitar-pick::before {
             content: ';
             position: absolute;
-            top: 20%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 12px;
@@ -335,7 +334,7 @@
         .guitar-pick::after {
             content: ';
             position: absolute;
-            top: 15%;
+            top: 25%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 6px;
@@ -808,20 +807,19 @@
         }
 
         .guitar-pick {
-            width: 80px;
-            height: 100px;
+            width: 60px;
+            height: 80px;
             background: var(--gradient);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            clip-path: polygon(50% 0%, 85% 25%, 85% 75%, 50% 100%, 15% 75%, 15% 25%);
             position: relative;
             animation: pick-float 3s ease-in-out infinite;
             box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-
         .guitar-pick::before {
             content: ';
             position: absolute;
-            top: 20%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 12px;
@@ -834,7 +832,7 @@
         .guitar-pick::after {
             content: ';
             position: absolute;
-            top: 15%;
+            top: 25%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 6px;
