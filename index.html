@@ -309,16 +309,57 @@
         }
 
         .guitar-pick {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 100px;
             background: var(--gradient);
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             position: relative;
             animation: pick-float 3s ease-in-out infinite;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
+        .guitar-pick::before {
+            content: ';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .guitar-pick::after {
+            content: ';
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+        }
+
+        .guitar-pick-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.1) 2px,
+                rgba(255, 255, 255, 0.1) 4px
+            );
+            border-radius: inherit;
+            pointer-events: none;
+        }
         .guitar-pick::before {
             content: ';
             position: absolute;
@@ -332,8 +373,8 @@
         }
 
         @keyframes pick-float {
-            0%, 100% { transform: rotate(-45deg) translateY(0px); }
-            50% { transform: rotate(-45deg) translateY(-10px); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .sound-waves {
@@ -767,16 +808,57 @@
         }
 
         .guitar-pick {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 100px;
             background: var(--gradient);
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             position: relative;
             animation: pick-float 3s ease-in-out infinite;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
+        .guitar-pick::before {
+            content: ';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .guitar-pick::after {
+            content: ';
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+        }
+
+        .guitar-pick-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.1) 2px,
+                rgba(255, 255, 255, 0.1) 4px
+            );
+            border-radius: inherit;
+            pointer-events: none;
+        }
         .guitar-pick::before {
             content: ';
             position: absolute;
@@ -790,8 +872,8 @@
         }
 
         @keyframes pick-float {
-            0%, 100% { transform: rotate(-45deg) translateY(0px); }
-            50% { transform: rotate(-45deg) translateY(-10px); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .sound-waves {
@@ -921,7 +1003,9 @@
             </div>
             <div class="hero-visual">
                 <div class="tone-visualizer">
-                <div class="guitar-pick"></div>
+                <div class="guitar-pick">
+                    <div class="guitar-pick-texture"></div>
+                </div>
                 <div class="sound-waves">
                     <div class="wave"></div>
                     <div class="wave"></div>
