@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToneGPT - AI-Powered FM9 Tone Generation</title>
-    <!-- Add Stripe -->
-    <script src="https://js.stripe.com/v3/"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -85,4 +83,75 @@
         .tier:hover { border-color: #4ecdc4; transform: translateY(-2px); }
         .tier.selected { border-color: #ff6b6b; background: rgba(255, 107, 107, 0.1); }
         .tier-price { font-size: 1.2rem; font-weight: bold; color: #ff6b6b; margin-bottom: 0.5rem; }
-        .tier-name { font-size: 0.9rem; color: #cccccc; margin-bottom: 1rem
+        .tier-name { font-size: 0.9rem; color: #cccccc; margin-bottom: 1rem; }
+        .payment-button {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .payment-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: white;
+            text-decoration: none;
+        }
+        .contact { color: #cccccc; font-size: 1rem; }
+        @media (max-width: 768px) {
+            .logo { font-size: 2.5rem; }
+            .coming-soon { font-size: 2rem; }
+            .features { flex-direction: column; align-items: center; }
+            .support-tiers { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🎸 ToneGPT</div>
+        <div class="subtitle">AI-Powered FM9 Tone Generation</div>
+        <div class="coming-soon">COMING SOON</div>
+        
+        <div class="description">
+            The world's most advanced AI-powered tone generation system.
+        </div>
+
+        <div class="features">
+            <div class="feature">329 Amp Models</div>
+            <div class="feature">79 Drive Models</div>
+            <div class="feature">226 Cab Models</div>
+        </div>
+
+        <div class="support-section">
+            <div class="support-title">💝 Support Development</div>
+            <div class="support-tiers">
+                <div class="tier">
+                    <div class="tier-price">$25</div>
+                    <div class="tier-name">Supporter</div>
+                    <a href="https://www.paypal.com/donate/?business=btankersley18%40gmail.com&amount=25&currency_code=USD&item_name=ToneGPT%20Supporter" class="payment-button" target="_blank">Donate $25</a>
+                </div>
+                <div class="tier selected">
+                    <div class="tier-price">$50</div>
+                    <div class="tier-name">Contributor</div>
+                    <a href="https://www.paypal.com/donate/?business=btankersley18%40gmail.com&amount=50&currency_code=USD&item_name=ToneGPT%20Contributor" class="payment-button" target="_blank">Donate $50</a>
+                </div>
+                <div class="tier">
+                    <div class="tier-price">$100</div>
+                    <div class="tier-name">Patron</div>
+                    <a href="https://www.paypal.com/donate/?business=btankersley18%40gmail.com&amount=100&currency_code=USD&item_name=ToneGPT%20Patron" class="payment-button" target="_blank">Donate $100</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            Contact: ben@tonegpt.com
+        </div>
+    </div>
+</body>
+</html>
