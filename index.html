@@ -66,4 +66,23 @@
             margin-bottom: 2rem;
             border: 2px solid rgba(255, 107, 107, 0.3);
         }
-        .support-title { font-
+        .support-title { font-size: 1.5rem; margin-bottom: 1rem; color: #4ecdc4; }
+        .support-tiers {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .tier {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        .tier:hover { border-color: #4ecdc4; transform: translateY(-2px); }
+        .tier.selected { border-color: #ff6b6b; background: rgba(255, 107, 107, 0.1); }
+        .tier-price { font-size: 1.2rem; font-weight: bold; color: #ff6b6b; margin-bottom: 0.5rem; }
+        .tier-name { font-size: 0.9rem; color: #cccccc; margin-bottom: 1rem
