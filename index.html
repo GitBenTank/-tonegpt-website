@@ -7,82 +7,63 @@
     <!-- Add Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     <style>
-        /* Your existing styles... */
-        
-        /* Add payment button styles */
-        .payment-button {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container { text-align: center; max-width: 600px; }
+        .logo {
+            font-size: 4rem;
             font-weight: bold;
-            margin-top: 10px;
-            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
         }
-        .payment-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.5)); }
+            to { filter: drop-shadow(0 0 30px rgba(69, 183, 209, 0.8)); }
         }
-    </style>
-</head>
-<body>
-    <!-- Your existing content... -->
-    
-    <div class="support-section">
-        <div class="support-title">💝 Support Development</div>
-        <div class="support-tiers">
-            <div class="tier">
-                <div class="tier-price">$25</div>
-                <div class="tier-name">Supporter</div>
-                <button class="payment-button" onclick="handlePayment(2500)">Donate $25</button>
-            </div>
-            <div class="tier selected">
-                <div class="tier-price">$50</div>
-                <div class="tier-name">Contributor</div>
-                <button class="payment-button" onclick="handlePayment(5000)">Donate $50</button>
-            </div>
-            <div class="tier">
-                <div class="tier-price">$100</div>
-                <div class="tier-name">Patron</div>
-                <button class="payment-button" onclick="handlePayment(10000)">Donate $100</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Initialize Stripe
-        const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY_HERE'); // Replace with your actual key
-        
-        async function handlePayment(amount) {
-            try {
-                // Create payment intent on your backend
-                const response = await fetch('/create-payment-intent', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ amount: amount })
-                });
-                
-                const { clientSecret } = await response.json();
-                
-                // Confirm payment
-                const { error } = await stripe.confirmPayment({
-                    clientSecret: clientSecret,
-                    confirmParams: {
-                        return_url: 'https://tonegpt.vercel.app/success',
-                    },
-                });
-                
-                if (error) {
-                    console.error('Payment failed:', error);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
+        .subtitle { font-size: 1.2rem; margin-bottom: 2rem; color: #cccccc; }
+        .coming-soon {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #ff6b6b;
+            animation: pulse 2s ease-in-out infinite;
         }
-    </script>
-</body>
-</html>
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .description { font-size: 1.1rem; margin-bottom: 3rem; color: #e0e0e0; }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+        .support-section {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+        .support-title { font-
